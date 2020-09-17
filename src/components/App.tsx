@@ -5,7 +5,6 @@ import { Switch, Route } from 'react-router-dom'
 import { Layout } from 'antd'
 import styled from 'styled-components'
 
-import OverlayVisible from './Dropdown'
 import NotFound from './NotFound'
 import Rates from './Rates'
 import Header from './Header'
@@ -17,7 +16,6 @@ function App() {
     <ConnectedRouter history={routeHistory}>
       <Layout style={{ minHeight: '100%' }}>
         <Header>Rates</Header>
-        <OverlayVisible />
         <Layout>
           <Content>
             <Switch>

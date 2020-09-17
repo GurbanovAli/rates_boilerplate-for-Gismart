@@ -1,21 +1,16 @@
 import React, {useState, useEffect}from 'react'
 import ApexChart, { Props } from 'react-apexcharts'
-import { TReduxProps } from './Container'
 import { StyledContainer } from './style'
 
 export type TComponentProps = {
-} & TReduxProps
+    currency: string
+}
 
-const Rates: React.FC<TComponentProps> = () => {
-
+const Rates: React.FC<TComponentProps> = (props) => {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState([]);
 
-  useEffect(() => {
-    loadData();
-  }, []);
-
- const loadData = async (currency: string = '145') => {
+ const loadData = async (currency: string = '292') => {
     const endDate = new Date();
     const startDate = new Date(new Date().setDate(endDate.getDate() - 7));
 
@@ -31,20 +26,22 @@ const Rates: React.FC<TComponentProps> = () => {
     console.log(series);
   }
 
+  useEffect(() => {
+    loadData(props.currency);
+  }, [props.currency]);
+
   const chartOptions = {
         chart: {
           id: "basic-bar"
         },
-        stroke: {
-                curve: 'smooth'
-        },
         xaxis: {
+          type: 'datetime',
           categories: category
         }
       }
   const chartSeries = [
         {
-          name: "series-1",
+          name: "currency",
           data: data
         }
       ]
@@ -53,8 +50,8 @@ const Rates: React.FC<TComponentProps> = () => {
   return (
     <StyledContainer>
       <ApexChart
-        options={chartOptions || []}
-        series={chartSeries || []}
+        options={chartOptions}
+        series={chartSeries}
         type={type}
         width={500}
         height={300}

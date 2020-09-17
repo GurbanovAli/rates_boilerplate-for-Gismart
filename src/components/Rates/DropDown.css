@@ -1,12 +1,12 @@
 .dropdown-item {
   display:flex;
   justify-content:center;
+  color: #000;
 }
 
-.chart {
-  margin: auto;
-  margin-top: 70px;
-  width: 1100px;
+.dropdown-item:hover {
+  cursor: pointer;
+  background-color: #d6d6d6;
 }
 
 .ant-dropdown-link {
@@ -28,12 +28,12 @@
 }
 
 .menu-list {
-  position: sticky;
+  position: inherit;
   padding: 5px 0;
   text-align: center;
 }
 
 .menu-list:hover {
-  background-color: gray;
+  background-color: #d6d6d6;
   cursor: pointer;
 }
