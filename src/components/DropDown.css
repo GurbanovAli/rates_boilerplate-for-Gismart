@@ -1,0 +1,39 @@
+.dropdown-item {
+  display:flex;
+  justify-content:center;
+}
+
+.chart {
+  margin: auto;
+  margin-top: 70px;
+  width: 1100px;
+}
+
+.ant-dropdown-link {
+  width: 140px;
+  margin: 20px;
+  padding: 15px;
+  border : 1px solid;
+  text-decoration: none;
+}
+
+.menu-item {
+  width: 140px;
+  margin: 20px;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  list-style: none;
+  border: 1px solid;
+}
+
+.menu-list {
+  position: sticky;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.menu-list:hover {
+  background-color: gray;
+  cursor: pointer;
+}
